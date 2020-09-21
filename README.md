@@ -10,7 +10,7 @@ Before training and prediction:
 - Training needs GPU, CPU won't be able to sufficient. My training stage was done on GX2080ti with 11GB and 62GB Memory Disk. Therefore, the configuration is defined as to maximize the use of GPU, change it upon your available hardware.
 - If you use IDE such as Pycharm, go to Project Structure and set main folder is source folder in order to import custom modules.
 - Folders are ordered with intention, please modify these so that it fits your folder paths.
-- Training takes about 18 hours (100 epochs) using above configurations.
+- Training for ResUNet takes about 18 hours (100 epochs) using above configurations. Training for ResUNet++ takes about 3 days (130 epochs)
 
 In order to train and predict, you need to:
 - Step 1: Download the datasets and put on appropriate folders.
