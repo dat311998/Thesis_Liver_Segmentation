@@ -44,17 +44,6 @@ def truncate_HU_value(range1, range2, img_path, save_path):
         save(img, save_path + '/' + 'volume-' + str(idx) + '.nii')
 
 
-def truncate_HU_value_test(range1, range2, img_path, save_path):
-    print("*** Truncating HU value to eliminate superfluous information on testing data ***")
-    for idx in range(range1, range2):
-        img, img_header = load(img_path + '/ircad_e0' + str(idx) + '_orig.nii')
-        img[img < -200] = -200
-        img[img > 250] = 250
-        img = np.array(img, dtype='int16')
-        print('Saving image ' + str(idx))
-        save(img, save_path + '/' + 'cad-volume-' + str(idx) + '.nii')
-
-
 # Remove the tumor label if the dataset is with 3 labels
 def remove_tumor_label(range1, range2, img_path, save_path):
     print("*** Removing tumor label ***")
@@ -64,16 +53,6 @@ def remove_tumor_label(range1, range2, img_path, save_path):
         img = np.array(img, dtype='uint8')
         print('Saving image ' + str(idx))
         save(img, save_path + '/' + 'segmentation-' + str(idx) + '.nii')
-
-
-def remove_tumor_label_test(range1, range2, img_path, save_path):
-    print("*** Removing tumor label ***")
-    for idx in range(range1, range2):
-        img, img_header = load(img_path + '/ircad_e0' + str(idx) + '_liver.nii')
-        img[img == 2] = 1
-        img = np.array(img, dtype='uint8')
-        print('Saving image ' + str(idx))
-        save(img, save_path + '/' + 'cad-segmentation-' + str(idx) + '.nii')
 
 
 def create_augmented_data(range1, range2, img_path, save_path):
@@ -92,9 +71,5 @@ def create_augmented_data(range1, range2, img_path, save_path):
 
 
 truncate_HU_value(range1=71, range2=131, img_path=training_folder, save_path=processed_training_folder)
-# Due to the naming convention of the test dataset, in order to preprocessing CT scan from 10-20, remove the 0 in /ircad_e0 when loading up file
-truncate_HU_value_test(range1=1, range2=10, img_path=testing_folder, save_path=processed_testing_folder)
 remove_tumor_label(range1=71, range2=131, img_path=training_folder, save_path=processed_training_folder)
-# Do the same as above instruction for preprocessing CT 10-20
-remove_tumor_label_test(range1=1, range2=10, img_path=testing_folder, save_path=processed_testing_folder)
 create_augmented_data(range1=0, range2=131, img_path=processed_training_folder, save_path=processed_training_folder)
