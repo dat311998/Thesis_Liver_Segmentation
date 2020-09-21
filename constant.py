@@ -1,0 +1,13 @@
+MAIN_PATH = "/home/hthieu/Documents/qdat2"
+DATA_PATH = MAIN_PATH + "/Data"
+TRAINING_DATA = DATA_PATH + "/TrainingData"
+TESTING_DATA = DATA_PATH + "/TestingData"
+PROCESSED_TRAINING_DATA = DATA_PATH + "/ProcessedTrainingData"
+PROCESSED_TESTING_DATA = DATA_PATH + "/ProcessedTestingData"
+NUMPY_DATA = DATA_PATH + "/NumpyData"
+RESULT_PATH = MAIN_PATH + "/Result"
+EXPERIMENT_PATH = MAIN_PATH + "/Experiment"
+WEIGHT_PATH = "/Users/dat311998/PycharmProjects/Liver-Segmentation/weights.100-0.01.h5"
+WEIGHT_PATH_RESUNETPLUSPLUS = "/Users/dat311998/PycharmProjects/Liver-Segmentation/weights-resunet++.h5"
+IMAGE_ROW = 256
+IMAGE_COL = 256
