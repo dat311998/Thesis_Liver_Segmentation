@@ -14,7 +14,9 @@ Before training and prediction:
 
 In order to train and predict, you need to:
 - Step 1: Download the datasets and put on appropriate folders.
-- Step 2: Run data_preprocessing.py and note the comments I made in the code in order to run the code without errors.
-- Step 3: Run data_creation.py. This will create train numpy files (3D images and masks), 3DIRCAD test data (3D images and masks), MICCAI test data with specific range (3D images and masks).
-- Step 4: Run train.py for ResUNet and train_resunetplusplus.py for ResUNet++
-- Step 5: In order to perform inference stage, you can use the available weight file (weights.100-0.01.h5 for ResUNet and weights-resunet++.h5 for ResUNet++), then run predict.py for ResUNet or predict_resunetplusplus.py for ResUNet++. There is snippet of code where I use to flip the images because predict function in Keras somehow randomly flipped the result vertically, such cases are CT scans number 2, 4, 6, 7, 8, 10, 11, 18, 19. For others, please comment out these lines for better prediction result. 
+- Step 2: Download the weight files and put on the project folder.
+- Step 3: Depending on your paths, modify all of the necessary information.
+- Step 4: Run data_preprocessing.py and note the comments I made in the code in order to run the code without errors.
+- Step 5: Run data_creation.py. This will create train numpy files (3D images and masks), 3DIRCAD test data (3D images and masks), MICCAI test data with specific range (3D images and masks).
+- Step 6: Run train.py for ResUNet and train_resunetplusplus.py for ResUNet++
+- Step 7: In order to perform inference stage, you can use the available weight file (weights.100-0.01.h5 for ResUNet and weights-resunet++.h5 for ResUNet++), then run predict.py for ResUNet or predict_resunetplusplus.py for ResUNet++. There is snippet of code where I use to flip the images because predict function in Keras somehow randomly flipped the result vertically, such cases are CT scans number 2, 4, 6, 7, 8, 10, 11, 18, 19. For others, please comment out these lines for better prediction result. 
