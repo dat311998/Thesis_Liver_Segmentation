@@ -6,7 +6,7 @@ from tensorflow.keras.metrics import Precision, Recall
 from train_resunetplusplus import ResUnetPlusPlus, preprocess
 
 import constant
-from data_creation import load_test_data_miccai
+from data_creation import load_test_data, load_test_data_miccai
 from loss import dice_coef
 import tensorflow as tf
 
@@ -66,7 +66,7 @@ def predict():
     print('Loading and preprocessing test data...')
     print('-' * 30)
 
-    imgs_test, mask = load_test_data_miccai()
+    imgs_test, mask = load_test_data()
     imgs_test = preprocess(imgs_test)
     mask = preprocess(mask)
 
